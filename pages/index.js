@@ -4,9 +4,11 @@ import vision from "@google-cloud/vision";
 const client = new vision.ImageAnnotatorClient();
 
 export const getStaticProps = async () => {
-  const [result] = await client.textDetection("cat.jpeg");
-  const labels = result.labelAnnotations;
-  console.log(labels, "uwu");
+  const [result] = await client.textDetection(
+    "cards/bittering-thorns-yellow.png"
+  );
+  const labels = result.textAnnotations;
+  console.log(labels[0].description);
   return {
     props: {
       uwu: "uwu"
