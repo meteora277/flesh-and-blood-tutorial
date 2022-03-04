@@ -21,5 +21,10 @@ class turn {
       //do card action here
     }
   }
-  arsenal() {}
+
+  endTurn() {
+    this.pitch = 0;
+    this.actionPoints = 0;
+    this.goAgain = false;
+  }
 }
