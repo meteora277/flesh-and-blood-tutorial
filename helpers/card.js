@@ -1,5 +1,16 @@
 class card {
-  constructor(type, name, effect, characterClass, attack, defense, pitch) {
+  constructor(
+    type,
+    name,
+    effect,
+    characterClass,
+    actionType,
+    attack,
+    defense,
+    pitch,
+    cost,
+    color
+  ) {
     this.type = type;
     this.name = name;
     this.effect = effect;
@@ -7,5 +18,8 @@ class card {
     this.attack = attack;
     this.defense = defense;
     this.pitch = pitch;
+    this.cost = cost;
+    this.color = color;
+    this.actionType = actionType;
   }
 }
