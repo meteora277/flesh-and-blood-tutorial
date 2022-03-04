@@ -8,5 +8,18 @@ class turn {
   addActionPoints(num) {
     this.actionPoints += num;
   }
-  addGoAgain() {}
+  addGoAgain() {
+    this.goAgain = true;
+  }
+  action() {
+    if (this.actionPoints > 0 || this.goAgain === true) {
+      if (this.goAgain === true) {
+        this.goAgain = false;
+      } else {
+        this.actionPoints -= 1;
+      }
+      //do card action here
+    }
+  }
+  arsenal() {}
 }
