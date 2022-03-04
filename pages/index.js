@@ -1,22 +1,10 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import vision from "@google-cloud/vision";
-const client = new vision.ImageAnnotatorClient();
-
-export const getStaticProps = async () => {
-  const [result] = await client.textDetection(
-    "cards/bittering-thorns-yellow.png"
-  );
-  const labels = result.textAnnotations;
-  console.log(labels[0].description);
-  return {
-    props: {
-      uwu: "uwu"
-    }
-  };
-};
-
+import game from "../helpers/game";
 export default function Home() {
+  const uwu = new game("justin", "notJustin");
+  console.log(uwu);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -25,7 +13,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>uwu</main>
+      <main>
+        <h1>Flesh and Blood Tutorial</h1>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <input name="name" placeholder="Player Name" />
+          <button>Submit</button>
+        </form>
+      </main>
     </div>
   );
 }
