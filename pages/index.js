@@ -5,9 +5,16 @@ import game from "../helpers/game";
 export default function Home() {
   const uwu = new game("justin", "notJustin");
 
+  const players = [uwu.player1, uwu.player2];
+
   const [turns, setTurns] = useState("");
 
   console.log(uwu.isGameOver());
+
+  function handleEndTurn() {
+    players.reverse();
+    console.log(players);
+  }
 
   return (
     <div className={styles.container}>
@@ -27,6 +34,7 @@ export default function Home() {
           <input name="name" placeholder="Player Name" />
           <button>Submit</button>
         </form>
+        <button onClick={() => handleEndTurn()}>End turn</button>
       </main>
     </div>
   );
