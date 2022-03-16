@@ -1,9 +1,13 @@
 import Head from "next/head";
+import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import game from "../helpers/game";
 export default function Home() {
   const uwu = new game("justin", "notJustin");
-  console.log(uwu);
+
+  const [turns, setTurns] = useState("");
+
+  console.log(uwu.isGameOver());
 
   return (
     <div className={styles.container}>
